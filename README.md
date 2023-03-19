@@ -9,6 +9,7 @@ The APIs described below allow for searching, entering, or deleting data.
 - Trigger functions were applied directly into the database.
 - See trigger SQL script in /data/
 - See test db pg_dump in /data/
+- Insomnia collection with API examples in /documents/
 
 ## Tables
 - amenities: lists the amenities available for each room.

@@ -4,10 +4,10 @@ It records guests information, stay details, and the charges incurred.
 The APIs described below allow for searching, entering, or deleting data.
 
 ### Notes
-- ERD in /bbmgmtapp_db/
+- ERD in /documents/
 - Docker compose includes a pg_admin container to review the database.
 - Trigger functions were applied directly into the database.
-- See trigger SQL script in /bbmgmtapp_db/
+- See trigger SQL script in /documents/
 
 ## Tables
 - amenities: lists the amenities available for each room.

@@ -1,0 +1,8 @@
+alembic==1.9.4
+Faker==17.0.0
+Flask==2.2.3
+Flask-Migrate==4.0.4
+Flask-SQLAlchemy==3.0.3
+psycopg2-binary==2.9.5
+SQLAlchemy==2.0.4
+Datetime==5.0

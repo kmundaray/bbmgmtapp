@@ -1,0 +1,29 @@
+version: "3.8"
+services:
+  pg:
+      container_name: bbmgmtapp_db
+      image: postgres:latest
+      restart: always
+      environment:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: bbmgmt4app
+          POSTGRES_DB: bbmgmtapp_db
+          POSTGRES_HOST_AUTH_METHOD: trust
+      ports:
+          - "5432:5432"
+      volumes:
+          - ./data:/bbmgmtapp_db
+  pgadmin:
+      container_name: pgadmin_temp_container
+      image: dpage/pgadmin4:latest
+      restart: always
+      environment:
+          PGADMIN_DEFAULT_EMAIL: admin@example.com
+          PGADMIN_DEFAULT_PASSWORD: admin123
+          PGADMIN_LISTEN_PORT: 5433
+          PGADMIN_CONFIG_SERVER_MODE: "False"
+          PGADMIN_CONFIG_MASTER_PASSWORD_REQUIRED: "False"
+      ports:
+          - "5433:5433"
+      depends_on:
+          - pg

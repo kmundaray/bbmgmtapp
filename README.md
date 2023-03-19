@@ -7,7 +7,8 @@ The APIs described below allow for searching, entering, or deleting data.
 - ERD in /documents/
 - Docker compose includes a pg_admin container to review the database.
 - Trigger functions were applied directly into the database.
-- See trigger SQL script in /documents/
+- See trigger SQL script in /data/
+- See test db pg_dump in /data/
 
 ## Tables
 - amenities: lists the amenities available for each room.

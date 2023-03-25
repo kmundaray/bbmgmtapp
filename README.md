@@ -42,37 +42,28 @@ The APIs described below allow for searching, entering, or deleting data.
 - Table with metrics from all stay records.
 
 ## App Endpoints/Methods
-- Guests:
-  - GET:
-      - All guests: /guests
-      - One guest: /guests/<guest_id>
-      - All guest stays: /guests/<guest_id/stays
-  - POST:
-      - Create a guest: /guests/newguest
-  - PUT:
-      - Update guest: /guests/updateguest
-  - DELETE:
-    - Delete guest: /guests/deleteguest/<guest_id>
-- Transactions and Balances:
-  - GET:
-    - All balances: /transactionbalances/
-    - One balance: /transactionbalances/<stay_balance_id>
-    - All balance transactions: /transactionbalances/<stay_balance_id>/transactions
-- Stays:
-  - GET:
-    - All stays: /stays
-    - One stay: /stays/<stay_id>
-  - POST:
-    - Create a stay: /stays/newstay        
-    - Cancel a stay: /stays/cancelstay
-- Rooms:
-  - GET:
-    - All rooms: /rooms
-    - One room: /rooms/<room_number>
-    - All room amenities: /rooms/<room_number>/amenities
-    - All room types: /roomtypes
-    - One room type: /roomtypes/<room_type_id>
-    - All room type rate schedules: /roomtypes/<room_type_id>/rateschedules
+| Blueprint    | Paths                                               | Methods  | Parameters      | Description                                   |
+| :----:       | :---                                                | :---     | :--             | :---                                          |
+| Guests       | /guests                                             | GET      |                 | Returns all guest records                     |
+|              | /guests/<guest_id>                                  | GET      | guest_id        | Returns specific guest record                 |
+|              | /guests/<guest_id>/stays                            | GET      | guest_id        | Returns all stay records for specific guest   |
+|              | /guests/newguest                                    | POST     | guest_first_name, [guest_middle_initial], guest_last_name, guest_phone_number, guest_email, [guest_state], guest_birthdate | Creates a new guest record |
+|              | /guests/updateguest                                 | PUT      | guest_id, [guest_first_name], [guest_middle_initial], [guest_last_name], [guest_phone_number], [guest_email], [guest_state], [guest_birthdate]| Updates a specific guest record |
+|              | /guests/deleteguest/<guest_id>                      | DELETE   | guest_id        | Deletes a specific guest record               |
+| Transactions | /transactionbalances/                               | GET      |                 | Returns all balances for all stay records     |
+|              | /transactionbalances/<stay_balance_id>              | GET      | stay_balance_id | Returns the balance for a stay record         |
+|              | /transactionbalances/<stay_balance_id>/transactions | GET      | stay_balance_id | Returns all transactions for specific balance |
+| Stays        | /stays                                              | GET      |                 | Returns all stay records                      |
+|              | /stays/<stay_id>                                    | GET      | stay_id         | Returns a specific stay record                |
+|              | /stays/newstay                                      | POST     | room_number, stay_holder_guest_id, stay_check_in, stay_check_out | Creates a new stay record |
+|              | /stays/cancelstay                                   | POST     | room_number, stay_holder_guest_id, stay_check_in, stay_check_out | Returns a specific stay record |
+| Rooms        | /rooms                                              | GET      |                 | Returns all room records                      |
+|              | /rooms/<room_number>                                | GET      |                 | Returns a specific room record                |
+|              | /rooms/<room_number>/amenities                      | GET      |                 | Returns all amenities for the room number     |
+|              | /roomtypes                                          | GET      |                 | Returns all room type records                 |
+|              | /roomtypes/<room_type_id>                           | GET      |                 | Returns a specific room type record           |
+|              | /roomtypes/<room_type_id>/rateschedules             | GET      |                 | Returns all room type rate schedules          |
+
 
 ## Future APIs
 - API TO PAY FOR A BALANCE
